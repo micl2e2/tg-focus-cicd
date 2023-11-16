@@ -31,7 +31,12 @@ target `x64-linux-musl`:
 # Artifacts
 
 `docker.io/micl2e2/tg-focus-cicd-toolc:gcc12-deb10-x64`:
-- sha256:df4662dc5869ca8575f6fd576ecb8dab7ab6f79dcb94c35968afb1abbc749f54
-- https://github.com/micl2e2/tg-focus-cicd/actions/runs/6886233121
+- id: 3dc5511482c72deb026884e955cb9063d15973217200a1b28a003e43cdb55dee
+- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/6886233121
+
+`docker.io/micl2e2/tg-focus-cicd-tdlib:030e440757478ef5f5fdb01f60c3c6d885330c72-gcc12-deb10-x64`:
+- id: d158c48baa7091637da9bb383a51b5e1ad14b755f2c7a5a1f4f48160c50f7c44
+- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/6887318188
+
 
 
