@@ -8,7 +8,7 @@ PICK_TOOLC_ARCH="x64"
 PICK_TOOLC_FULLTAG="$PICK_TOOLC_FULLVER-$PICK_TOOLC_OS-$PICK_TOOLC_ARCH" # no-buildstamp tag
 
 # tdlib
-PICK_TDLIB_IMGNAME="tg-focus-build-essential-tdlib" # much more formal, hence hyphen
+PICK_TDLIB_IMGNAME="tg-focus-cicd-tdlib" # much more formal, hence hyphen
 PICK_TDLIB_SRC="$(cat tdlib-gitcmm)"
 PICK_TDLIB_TAG="$PICK_TDLIB_SRC-$PICK_TOOLC_FULLTAG" # tag without buildstamp
 PICK_TDLIB_IMGFULLNAME="$PICK_TDLIB_IMGNAME:$PICK_TDLIB_TAG"
