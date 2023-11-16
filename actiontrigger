@@ -1,2 +1,3 @@
 run build-toolc-gcc12-deb10-x64
 run build-tdlib-gitcmm-gcc12-deb10-x64
+run build-tgfocus-gittag-x64-linux-gnu
