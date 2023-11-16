@@ -18,8 +18,14 @@ test $? -eq 0 && buildah rm $CTN_PACK_TOOLC || \
 test $? -eq 0 || exit 2
 
 # prepare gcc img
-buildah from --name $CTN_PACK_TOOLC "docker.io/micl2e2/$PICK_TOOLC_IMGFULLNAME"
-test $? -eq 0 || exit 3
+buildah ps | grep $CTN_PACK_TDLIB
+if [[ $? -ne 0 ]]
+then
+    buildah from --name $CTN_PACK_TOOLC "docker.io/micl2e2/$PICK_TOOLC_IMGFULLNAME"
+    test $? -eq 0 || exit 3
+    podman inspect "docker.io/micl2e2/$PICK_TOOLC_IMGFULLNAME" | grep Id
+    test $? -eq 0 || exit 3
+fi
 
 # prepare build ctn
 buildah from --name $CTN_BUILD_TDLIB $PICK_BASEIMG

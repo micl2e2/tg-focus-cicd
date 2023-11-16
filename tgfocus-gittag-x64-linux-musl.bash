@@ -8,6 +8,8 @@ if [[ $? -ne 0 ]]
 then
     buildah from --name $CTN_PACK_TDLIB "docker.io/micl2e2/$PICK_TDLIB_IMGFULLNAME"
     test $? -eq 0 || exit 1
+    podman inspect "docker.io/micl2e2/$PICK_TDLIB_IMGFULLNAME" | grep Id
+    test $? -eq 0 || exit 1
 fi
 
 # remove build and pack
