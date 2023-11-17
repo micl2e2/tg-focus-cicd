@@ -46,4 +46,6 @@ target `x64-linux-musl`:
 - id: 7acea365b23975c2cdb1ceed3a46dd8977cc36609ae2bbce0eba3494c19d5b48
 - artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/6899217558
 
+`tg-focus-1.4.1814-x64-linux-gnu`
+- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/6888621611
 
