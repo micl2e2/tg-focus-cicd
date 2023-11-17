@@ -41,3 +41,9 @@ target `x64-linux-musl`:
 `docker.io/micl2e2/tg-focus-cicd-tdlib:030e440757478ef5f5fdb01f60c3c6d885330c72-default-alp318-x64`:
 - id: 7d7758d7afcdf4e7dd491b5cac96452a33c8d05410b05159a87dcedda62be298
 - artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/6892528556
+
+`docker.io/micl2e2/tg-focus:1.4.1814-x64-linux-musl`
+- id: 7acea365b23975c2cdb1ceed3a46dd8977cc36609ae2bbce0eba3494c19d5b48
+- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/6899217558
+
+
