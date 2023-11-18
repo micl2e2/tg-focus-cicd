@@ -5,6 +5,6 @@ then
     echo "$run_what $(TZ=UTC date)" >>actiontrigger
     echo '[INFO] done'
 else
-    echo '[INFO] bad input'
+    echo '[INFO] bad input, arg1 should be <run xxx>'
 fi
 
