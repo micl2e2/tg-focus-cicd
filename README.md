@@ -60,3 +60,10 @@ target `x64-linux-musl`:
 - id: 42e063e7dbb26ef3871f3fbca936d00ed2ee64712c6a466226099b00a2a86b7d
 - artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/6912676245
 - corresponding tdlib version: 1.8.21
+
+`tg-focus-1.5-x64-linux-gnu`
+- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/6914534485
+
+`docker.io/micl2e2/tg-focus:1.5-x64-linux-musl`
+- id: 65a2124148a47174008aca7b3afc21adb8d3de0f5fe62a095c3d8bbf34d46bcc
+- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/6914536879
