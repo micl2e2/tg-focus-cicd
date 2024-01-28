@@ -83,7 +83,7 @@ buildah run $CTN_BUILD_TGFOCUS -- \
 test $? -eq 0 || exit 15
 
 buildah run $CTN_BUILD_TGFOCUS -- \
-	bash -c 'cd tg-focus/build && LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH make test'
+	bash -c 'cd tg-focus/build && LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH TZ=UTC make test'
 test $? -eq 0 || exit 16
 
 buildah run $CTN_BUILD_TGFOCUS -- \
