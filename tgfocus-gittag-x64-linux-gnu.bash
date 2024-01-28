@@ -50,9 +50,6 @@ test $? -eq 0 || exit 4
 
 # locales
 buildah run $CTN_BUILD_TGFOCUS -- \
-        bash -c "echo 'C.UTF-8 UTF-8' >>/etc/locale.gen"
-test $? -eq 0 || exit 5
-buildah run $CTN_BUILD_TGFOCUS -- \
 	sed -i 's/# en_HK.UTF-8/en_HK.UTF-8/' /etc/locale.gen
 test $? -eq 0 || exit 6
 buildah run $CTN_BUILD_TGFOCUS -- \
