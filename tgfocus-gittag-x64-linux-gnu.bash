@@ -48,6 +48,16 @@ buildah run $CTN_BUILD_TGFOCUS -- \
 	-y --quiet
 test $? -eq 0 || exit 4
 
+buildah run $CTN_BUILD_TGFOCUS -- \
+	sed -i 's/# en_HK.UTF-8/en_HK.UTF-8/'
+test $? -eq 0 || exit 4
+buildah run $CTN_BUILD_TGFOCUS -- \
+	sed -i 's/# en_US.UTF-8/en_US.UTF-8/'
+test $? -eq 0 || exit 4
+buildah run $CTN_BUILD_TGFOCUS -- \
+	sed -i 's/# en_ZW.UTF-8/en_ZW.UTF-8/'
+test $? -eq 0 || exit 4
+
 $PXY_FRONTEND buildah run $CTN_BUILD_TGFOCUS -- \
         git clone https://github.com/micl2e2/tg-focus
 test $? -eq 0 || exit 4
