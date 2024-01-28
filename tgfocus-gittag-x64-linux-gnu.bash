@@ -48,54 +48,50 @@ buildah run $CTN_BUILD_TGFOCUS -- \
 	-y --quiet
 test $? -eq 0 || exit 4
 
+# locales
+buildah run $CTN_BUILD_TGFOCUS -- \
+        bash -c "echo 'C.UTF-8 UTF-8' >>/etc/locale.gen"
+test $? -eq 0 || exit 5
 buildah run $CTN_BUILD_TGFOCUS -- \
 	sed -i 's/# en_HK.UTF-8/en_HK.UTF-8/' /etc/locale.gen
-test $? -eq 0 || exit 4
+test $? -eq 0 || exit 6
 buildah run $CTN_BUILD_TGFOCUS -- \
 	sed -i 's/# en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
-test $? -eq 0 || exit 4
+test $? -eq 0 || exit 7
 buildah run $CTN_BUILD_TGFOCUS -- \
 	sed -i 's/# en_ZW.UTF-8/en_ZW.UTF-8/' /etc/locale.gen
-test $? -eq 0 || exit 4
+test $? -eq 0 || exit 8
 buildah run $CTN_BUILD_TGFOCUS -- \
         locale-gen
-test $? -eq 0 || exit 4
+test $? -eq 0 || exit 9
 
 $PXY_FRONTEND buildah run $CTN_BUILD_TGFOCUS -- \
         git clone https://github.com/micl2e2/tg-focus
-test $? -eq 0 || exit 4
+test $? -eq 0 || exit 11
 
 $PXY_FRONTEND buildah run $CTN_BUILD_TGFOCUS -- \
         bash -c "cd tg-focus && git checkout $PICK_TGFOCUS_GITTAG"
-test $? -eq 0 || exit 5
+test $? -eq 0 || exit 12
 
 $PXY_FRONTEND buildah run $CTN_BUILD_TGFOCUS -- \
 	bash -c "cd tg-focus && bash dev/install-deps-oci-only.bash"
-test $? -eq 0 || exit 6
+test $? -eq 0 || exit 13
 
 buildah run $CTN_BUILD_TGFOCUS -- \
 	bash -c "cd tg-focus && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=/usr/local/bin/alt-gcc -DCMAKE_CXX_COMPILER=/usr/local/bin/alt-g++ -B build"
-test $? -eq 0 || exit 7
+test $? -eq 0 || exit 14
 
 buildah run $CTN_BUILD_TGFOCUS -- \
 	bash -c 'cd tg-focus/build && LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH make -j$(nproc)'
-test $? -eq 0 || exit 8
-
-buildah run $CTN_BUILD_TGFOCUS -- \
-        bash -c 'sed -i "s/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/" /etc/locale.gen'
-test $? -eq 0 || exit 9
-
-buildah run $CTN_BUILD_TGFOCUS -- \
-        locale-gen
-test $? -eq 0 || exit 10
+test $? -eq 0 || exit 15
 
 buildah run $CTN_BUILD_TGFOCUS -- \
 	bash -c 'cd tg-focus/build && LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH make test'
-test $? -eq 0 || exit 11
+test $? -eq 0 || exit 16
 
 buildah run $CTN_BUILD_TGFOCUS -- \
 	bash -c "cd tg-focus && strip /tg-focus/build/tf-conf && strip /tg-focus/build/tf-focusd"
-test $? -eq 0 || exit 12
+test $? -eq 0 || exit 17
 
 
 # package
