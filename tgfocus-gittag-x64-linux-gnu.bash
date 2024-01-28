@@ -49,13 +49,16 @@ buildah run $CTN_BUILD_TGFOCUS -- \
 test $? -eq 0 || exit 4
 
 buildah run $CTN_BUILD_TGFOCUS -- \
-	sed -i 's/# en_HK.UTF-8/en_HK.UTF-8/'
+	sed -i 's/# en_HK.UTF-8/en_HK.UTF-8/' /etc/locale.gen
 test $? -eq 0 || exit 4
 buildah run $CTN_BUILD_TGFOCUS -- \
-	sed -i 's/# en_US.UTF-8/en_US.UTF-8/'
+	sed -i 's/# en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
 test $? -eq 0 || exit 4
 buildah run $CTN_BUILD_TGFOCUS -- \
-	sed -i 's/# en_ZW.UTF-8/en_ZW.UTF-8/'
+	sed -i 's/# en_ZW.UTF-8/en_ZW.UTF-8/' /etc/locale.gen
+test $? -eq 0 || exit 4
+buildah run $CTN_BUILD_TGFOCUS -- \
+        locale-gen
 test $? -eq 0 || exit 4
 
 $PXY_FRONTEND buildah run $CTN_BUILD_TGFOCUS -- \
