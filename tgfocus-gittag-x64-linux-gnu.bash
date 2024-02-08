@@ -87,7 +87,7 @@ buildah run $CTN_BUILD_TGFOCUS -- \
 test $? -eq 0 || exit 16
 
 buildah run $CTN_BUILD_TGFOCUS -- \
-	bash -c "cd tg-focus && strip /tg-focus/build/tf-conf && strip /tg-focus/build/tf-focusd"
+	bash -c "cd tg-focus && strip /tg-focus/build/tgf-conf && strip /tg-focus/build/tgf-focusd"
 test $? -eq 0 || exit 17
 
 
@@ -102,10 +102,10 @@ test $? -eq 0 || exit 14
 rm -rf $PICK_TGFOCUS_ARTIFACTNAME
 mkdir -p $PICK_TGFOCUS_ARTIFACTNAME
 
-podman cp $tmpctn:/tg-focus/build/tf-conf $PICK_TGFOCUS_ARTIFACTNAME/tf-conf
+podman cp $tmpctn:/tg-focus/build/tgf-conf $PICK_TGFOCUS_ARTIFACTNAME/tgf-conf
 test $? -eq 0 || exit 15
 
-podman cp $tmpctn:/tg-focus/build/tf-focusd $PICK_TGFOCUS_ARTIFACTNAME/tf-focusd
+podman cp $tmpctn:/tg-focus/build/tgf-focusd $PICK_TGFOCUS_ARTIFACTNAME/tgf-focusd
 test $? -eq 0 || exit 16
 
 tar --create --gzip --file $PICK_TGFOCUS_ARTIFACTNAME.tar.gz $PICK_TGFOCUS_ARTIFACTNAME

@@ -15,4 +15,7 @@ build
 
 tdlib-*.json
 gcc-*.json
-*.tar
+*.tar*
+CHECKSUMS
+*/tf-conf
+*/tf-focusd
