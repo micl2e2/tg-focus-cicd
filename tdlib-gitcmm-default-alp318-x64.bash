@@ -40,8 +40,12 @@ buildah run $CTN_BUILD_TDLIB -- \
 test $? -eq 0 || exit 9
 
 buildah run $CTN_BUILD_TDLIB -- \
-	sh -c "cd td/build && make -j$(nproc) && make install"
+	sh -c "cd td/build && make -j$(nproc)"
 test $? -eq 0 || exit 10
+
+buildah run $CTN_BUILD_TDLIB -- \
+	sh -c "cd td/build && make test"
+test $? -eq 0 || exit 11
 
 buildah run $CTN_BUILD_TDLIB -- \
 	sh -c "cd td/build && make install"
