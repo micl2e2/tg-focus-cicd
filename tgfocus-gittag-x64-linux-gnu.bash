@@ -117,6 +117,9 @@ test $? -eq 0 || exit 16
 podman cp $tmpctn:/tg-focus/README.md $PICK_TGFOCUS_ARTIFACTNAME/README.md
 test $? -eq 0 || exit 16
 
+podman cp $tmpctn:/tg-focus/ChangeLog $PICK_TGFOCUS_ARTIFACTNAME/ChangeLog
+test $? -eq 0 || exit 16
+
 podman cp $tmpctn:/tg-focus/LICENSE-GPL $PICK_TGFOCUS_ARTIFACTNAME/LICENSE-GPL
 test $? -eq 0 || exit 16
 

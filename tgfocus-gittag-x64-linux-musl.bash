@@ -99,6 +99,10 @@ buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \
 test $? -eq 0 || exit 18
 
 buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \
+	'/tg-focus/ChangeLog' '/usr/local/bin'
+test $? -eq 0 || exit 18
+
+buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \
 	'/tg-focus/LICENSE-GPL' '/usr/local/bin'
 test $? -eq 0 || exit 18
 
