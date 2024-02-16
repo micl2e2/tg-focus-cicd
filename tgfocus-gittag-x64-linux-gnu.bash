@@ -59,6 +59,12 @@ buildah run $CTN_BUILD_TGFOCUS -- \
 	sed -i 's/# en_ZW.UTF-8/en_ZW.UTF-8/' /etc/locale.gen
 test $? -eq 0 || exit 8
 buildah run $CTN_BUILD_TGFOCUS -- \
+	sed -i 's/# zh_CN.UTF-8/zh_CN.UTF-8/' /etc/locale.gen
+test $? -eq 0 || exit 81
+buildah run $CTN_BUILD_TGFOCUS -- \
+	sed -i 's/# zh_HK.UTF-8/zh_HK.UTF-8/' /etc/locale.gen
+test $? -eq 0 || exit 82
+buildah run $CTN_BUILD_TGFOCUS -- \
         locale-gen
 test $? -eq 0 || exit 9
 
