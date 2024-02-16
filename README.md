@@ -28,6 +28,7 @@ target `x64-linux-musl`:
 - `tg-focus-cicd-tdlib:GITCMM-default-alp318-x64`
 
 
+
 # Artifacts
 
 `docker.io/micl2e2/tg-focus-cicd-toolc:gcc12-deb10-x64`:
@@ -67,3 +68,18 @@ target `x64-linux-musl`:
 `docker.io/micl2e2/tg-focus:1.5-x64-linux-musl`
 - id: 65a2124148a47174008aca7b3afc21adb8d3de0f5fe62a095c3d8bbf34d46bcc
 - artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/6914536879
+
+
+# Trigger An Action
+
+## Step 1
+
+```
+bash before-action.bash 'run build-tgfocus-gittag-x64-linux-musl'
+```
+
+## Step 2
+
+```
+git add actiontrigger && git commit -m 'run build-tgfocus-gittag-x64-linux-musl'
+```
