@@ -85,12 +85,27 @@ test $? -eq 0 || exit 16
 
 buildah from --name $CTN_PACK_TGFOCUS $PICK_BASEIMG
 test $? -eq 0 || exit 17
+
 buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \
 	'/tg-focus/build/tgf-conf' '/usr/local/bin'
 test $? -eq 0 || exit 18
+
 buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \
 	'/tg-focus/build/tgf-focusd' '/usr/local/bin'
 test $? -eq 0 || exit 18
+
+buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \
+	'/tg-focus/README.md' '/usr/local/bin'
+test $? -eq 0 || exit 18
+
+buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \
+	'/tg-focus/LICENSE-GPL' '/usr/local/bin'
+test $? -eq 0 || exit 18
+
+buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \
+	'/tg-focus/3rd/toml11/LICENSE' '/usr/local/bin/LICENSE-3rd-toml11'
+test $? -eq 0 || exit 18
+
 buildah run $CTN_PACK_TGFOCUS -- sh -c "apk add --no-cache nano"
 buildah config --cmd "/bin/sh -c tgf-focusd" $CTN_PACK_TGFOCUS
 

@@ -114,6 +114,15 @@ test $? -eq 0 || exit 15
 podman cp $tmpctn:/tg-focus/build/tgf-focusd $PICK_TGFOCUS_ARTIFACTNAME/tgf-focusd
 test $? -eq 0 || exit 16
 
+podman cp $tmpctn:/tg-focus/README.md $PICK_TGFOCUS_ARTIFACTNAME/README.md
+test $? -eq 0 || exit 16
+
+podman cp $tmpctn:/tg-focus/LICENSE-GPL $PICK_TGFOCUS_ARTIFACTNAME/LICENSE-GPL
+test $? -eq 0 || exit 16
+
+podman cp $tmpctn:/tg-focus/3rd/toml11/LICENSE $PICK_TGFOCUS_ARTIFACTNAME/LICENSE-3rd-toml11
+test $? -eq 0 || exit 16
+
 tar --create --gzip --file $PICK_TGFOCUS_ARTIFACTNAME.tar.gz $PICK_TGFOCUS_ARTIFACTNAME
 test $? -eq 0 || exit 17
 
