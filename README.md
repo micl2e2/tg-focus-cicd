@@ -74,6 +74,8 @@ target `x64-linux-musl`:
 
 ## Step 1
 
+For example, for target `build-tgfocus-gittag-x64-linux-musl`:
+
 ```
 bash before-action.bash 'run build-tgfocus-gittag-x64-linux-musl'
 ```
