@@ -73,11 +73,11 @@ buildah run $CTN_BUILD_TGFOCUS -- \
 test $? -eq 0 || exit 14
 
 buildah run $CTN_BUILD_TGFOCUS -- \
-	sh -c "cd tg-focus/build && make test"
+	sh -c "cd tg-focus/build && make test" # always UTC for clean alpine
 test $? -eq 0 || exit 15
 
 buildah run $CTN_BUILD_TGFOCUS -- \
-	sh -c "cd tg-focus && strip /tg-focus/build/tf-conf && strip /tg-focus/build/tf-focusd"
+	sh -c "cd tg-focus && strip /tg-focus/build/tgf-conf && strip /tg-focus/build/tgf-focusd"
 test $? -eq 0 || exit 16
 
 
@@ -86,13 +86,13 @@ test $? -eq 0 || exit 16
 buildah from --name $CTN_PACK_TGFOCUS $PICK_BASEIMG
 test $? -eq 0 || exit 17
 buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \
-	'/tg-focus/build/tf-conf' '/usr/local/bin'
+	'/tg-focus/build/tgf-conf' '/usr/local/bin'
 test $? -eq 0 || exit 18
 buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \
-	'/tg-focus/build/tf-focusd' '/usr/local/bin'
+	'/tg-focus/build/tgf-focusd' '/usr/local/bin'
 test $? -eq 0 || exit 18
 buildah run $CTN_PACK_TGFOCUS -- sh -c "apk add --no-cache nano"
-buildah config --cmd "/bin/sh -c tf-focusd" $CTN_PACK_TGFOCUS
+buildah config --cmd "/bin/sh -c tgf-focusd" $CTN_PACK_TGFOCUS
 
 # oci img artifact
 buildah commit $CTN_PACK_TGFOCUS $PICK_TGFOCUS_IMGFULLNAME
