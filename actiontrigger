@@ -38,3 +38,4 @@ run build-tgfocus-gittag-x64-linux-gnu Friday, February 16, 2024 PM02:28:20 UTC
 run build-tgfocus-gittag-x64-linux-musl Friday, February 16, 2024 PM02:28:27 UTC
 run build-tgfocus-gittag-x64-linux-gnu Saturday, February 17, 2024 PM12:26:02 UTC
 run build-tgfocus-gittag-x64-linux-musl Saturday, February 17, 2024 PM12:26:07 UTC
+run build-toolc-gcc12-deb10-x64 Friday, September 20, 2024 PM04:12:58 UTC
