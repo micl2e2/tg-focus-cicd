@@ -2,7 +2,7 @@ PICK_PLATFORM="x64-linux-gnu"
 CURR_DATE=$(date +'%Y%m%d')
 
 # toolchain
-PICK_GCC_REL="12.3.0"
+PICK_GCC_REL="12.4.0"
 PICK_TOOLC_FULLVER="gcc12"
 PICK_TOOLC_OS="deb10"
 PICK_TOOLC_ARCH="x64"

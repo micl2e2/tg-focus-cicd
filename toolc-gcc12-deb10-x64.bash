@@ -26,7 +26,7 @@ buildah run $CTN_BUILD_TOOLC -- \
 test $? -eq 0 || exit 5
 
 $PXY_FRONTEND buildah run $CTN_BUILD_TOOLC -- \
-	bash -c "wget https://ftp.gnu.org/gnu/gcc/gcc-${PICK_GCC_REL}/gcc-${PICK_GCC_REL}.tar.gz"
+	bash -c "wget http://ftp.gnu.org/gnu/gcc/gcc-${PICK_GCC_REL}/gcc-${PICK_GCC_REL}.tar.gz"
 test $? -eq 0 || exit 6
 
 buildah run $CTN_BUILD_TOOLC -- \
