@@ -35,10 +35,6 @@ target `x64-linux-musl`:
 - id: 3dc5511482c72deb026884e955cb9063d15973217200a1b28a003e43cdb55dee
 - artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/6886233121
 
-`docker.io/micl2e2/tg-focus-cicd-toolc:gcc12-deb10-x64`:
-- id: ddeffaa9ba1eb7427964c9932b7a6673440059bab481785c713da5f636940043
-- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/10962706054
-
 `docker.io/micl2e2/tg-focus-cicd-tdlib:030e440757478ef5f5fdb01f60c3c6d885330c72-gcc12-deb10-x64`:
 - id: d158c48baa7091637da9bb383a51b5e1ad14b755f2c7a5a1f4f48160c50f7c44
 - artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/6887318188
@@ -86,6 +82,10 @@ target `x64-linux-musl`:
 
 `docker.io/micl2e2/tg-focus:1.6-x64-linux-musl`
 - artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/7941644284
+
+`docker.io/micl2e2/tg-focus-cicd-toolc:gcc12-deb10-x64`:
+- id: ddeffaa9ba1eb7427964c9932b7a6673440059bab481785c713da5f636940043
+- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/10962706054
 
 
 # Trigger An Action
