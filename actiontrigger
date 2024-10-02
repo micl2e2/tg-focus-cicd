@@ -40,3 +40,4 @@ run build-tgfocus-gittag-x64-linux-gnu Saturday, February 17, 2024 PM12:26:02 UT
 run build-tgfocus-gittag-x64-linux-musl Saturday, February 17, 2024 PM12:26:07 UTC
 run build-toolc-gcc12-deb10-x64 Friday, September 20, 2024 PM04:12:58 UTC
 run build-tdlib-gitcmm-gcc12-deb10-x64 Wednesday, October 02, 2024 AM07:33:37 UTC
+run build-tdlib-gitcmm-default-alp318-x64 Wednesday, October 02, 2024 AM09:31:00 UTC
