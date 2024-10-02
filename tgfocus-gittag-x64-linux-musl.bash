@@ -95,7 +95,7 @@ buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \
 test $? -eq 0 || exit 18
 
 buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \
-	'/tg-focus/README' '/usr/local/bin'
+	'/tg-focus/README.md' '/usr/local/bin'
 test $? -eq 0 || exit 18
 
 buildah copy --from $CTN_BUILD_TGFOCUS $CTN_PACK_TGFOCUS \

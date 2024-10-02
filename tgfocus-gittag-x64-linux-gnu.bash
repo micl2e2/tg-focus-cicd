@@ -114,7 +114,7 @@ test $? -eq 0 || exit 15
 podman cp $tmpctn:/tg-focus/build/tgf-focusd $PICK_TGFOCUS_ARTIFACTNAME/tgf-focusd
 test $? -eq 0 || exit 16
 
-podman cp $tmpctn:/tg-focus/README $PICK_TGFOCUS_ARTIFACTNAME/README
+podman cp $tmpctn:/tg-focus/README.md $PICK_TGFOCUS_ARTIFACTNAME/README.md
 test $? -eq 0 || exit 16
 
 podman cp $tmpctn:/tg-focus/ChangeLog $PICK_TGFOCUS_ARTIFACTNAME/ChangeLog
