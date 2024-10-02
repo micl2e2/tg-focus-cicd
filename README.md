@@ -89,6 +89,10 @@ target `x64-linux-musl`:
 - artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/10962706054
 - notes: gcc version is 12.4.0
 
+`docker.io/micl2e2/tg-focus-cicd-tdlib:983b09578ee90cac504767c7f46b4ec915a56beb-gcc12-deb10-x64`
+- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/11139710320
+- tdlib version: 1.8.35(983b09578ee90cac504767c7f46b4ec915a56beb)
+
 
 # Trigger An Action
 
