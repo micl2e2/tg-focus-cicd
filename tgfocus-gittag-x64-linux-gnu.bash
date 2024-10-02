@@ -106,7 +106,7 @@ tmpctn=$(podman create $PICK_TGFOCUS_IMGFULLNAME)
 test $? -eq 0 || exit 14
 
 rm -rf $PICK_TGFOCUS_ARTIFACTNAME
-mkdir -p $PICK_TGFOCUS_ARTIFACTNAME
+mkdir -p $PICK_TGFOCUS_ARTIFACTNAME/license
 
 podman cp $tmpctn:/tg-focus/build/tgf-conf $PICK_TGFOCUS_ARTIFACTNAME/tgf-conf
 test $? -eq 0 || exit 15
@@ -114,16 +114,16 @@ test $? -eq 0 || exit 15
 podman cp $tmpctn:/tg-focus/build/tgf-focusd $PICK_TGFOCUS_ARTIFACTNAME/tgf-focusd
 test $? -eq 0 || exit 16
 
-podman cp $tmpctn:/tg-focus/README.md $PICK_TGFOCUS_ARTIFACTNAME/README.md
+podman cp $tmpctn:/tg-focus/README $PICK_TGFOCUS_ARTIFACTNAME/README
 test $? -eq 0 || exit 16
 
 podman cp $tmpctn:/tg-focus/ChangeLog $PICK_TGFOCUS_ARTIFACTNAME/ChangeLog
 test $? -eq 0 || exit 16
 
-podman cp $tmpctn:/tg-focus/LICENSE-GPL $PICK_TGFOCUS_ARTIFACTNAME/LICENSE-GPL
+podman cp $tmpctn:/tg-focus/LICENSE-GPL $PICK_TGFOCUS_ARTIFACTNAME/license/LICENSE-GPL
 test $? -eq 0 || exit 16
 
-podman cp $tmpctn:/tg-focus/3rd/toml11/LICENSE $PICK_TGFOCUS_ARTIFACTNAME/LICENSE-3rd-toml11
+podman cp $tmpctn:/tg-focus/3rd/toml11/LICENSE $PICK_TGFOCUS_ARTIFACTNAME/license/LICENSE-toml11
 test $? -eq 0 || exit 16
 
 tar --create --gzip --file $PICK_TGFOCUS_ARTIFACTNAME.tar.gz $PICK_TGFOCUS_ARTIFACTNAME
