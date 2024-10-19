@@ -108,6 +108,8 @@ target `x64-linux-musl`:
 `tg-focus-2.0-x64-linux-gnu`
 - artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/11417885682
 
+`docker.io/micl2e2/tg-focus:2.0-x64-linux-musl`
+- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/11418348226
 
 
 # Trigger An Action
