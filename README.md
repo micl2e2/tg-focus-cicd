@@ -97,6 +97,18 @@ target `x64-linux-musl`:
 - artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/11141376563
 - tdlib version: 1.8.35(983b09578ee90cac504767c7f46b4ec915a56beb)
 
+`docker.io/micl2e2/tg-focus-cicd-tdlib:15b86a17dc51caf5a3ba0b0acdb671cf8a27c80c-gcc12-deb10-x64`
+- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/11406221324
+- tdlib version: 1.8.36(15b86a17dc51caf5a3ba0b0acdb671cf8a27c80c)
+
+`docker.io/micl2e2/tg-focus-cicd-tdlib:15b86a17dc51caf5a3ba0b0acdb671cf8a27c80c-default-alp318-x64`
+- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/11417919482
+- tdlib version: 1.8.36(15b86a17dc51caf5a3ba0b0acdb671cf8a27c80c)
+
+`tg-focus-2.0-x64-linux-gnu`
+- artifacts: https://github.com/micl2e2/tg-focus-cicd/actions/runs/11417885682
+
+
 
 # Trigger An Action
 
